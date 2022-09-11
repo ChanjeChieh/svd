@@ -1,5 +1,11 @@
 # svd
 
+
+
+一个使用 springboot 和 vue 搭建的管理系统 demo
+
+
+
 ## Project setup
 ```
 npm install
