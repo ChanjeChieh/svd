@@ -14,8 +14,11 @@
     <!--表格区域    -->
     <div style="display: flex">
       <el-table :data="tableData" border stripe style="width: 100%">
-        <el-table-column prop="date" label="日期" width="300" sortable/>
-        <el-table-column prop="name" label="姓名" width="300" />
+        <el-table-column prop="id" label="ID" width="300" sortable/>
+        <el-table-column prop="username" label="用户名" width="300" />
+        <el-table-column prop="nickName" label="昵称" width="300" />
+        <el-table-column prop="age" label="年龄" width="300" />
+        <el-table-column prop="sex" label="性别" width="300" />
         <el-table-column prop="address" label="地址" width="300" />
         <el-table-column fixed="right" label="Operations" width="120">
           <template #default>
@@ -42,6 +45,18 @@
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"/>
     </div>
+
+    <el-dialog  v-model="dialogVisible" title="Tips" width="30%">
+      <span>This is a message</span>
+      <template #footer>
+      <span class="dialog-footer">
+        <el-button @click="dialogVisible = false">Cancel</el-button>
+        <el-button type="primary" @click="dialogVisible = false"
+        >Confirm</el-button
+        >
+      </span>
+      </template>
+    </el-dialog>
   </div>
 </template>
 
@@ -49,11 +64,15 @@
 // @ is an alias to /src
 
 export default {
+  dialogVisible: false,
   name: "HomeView",
   components: {
 
   },
   methods: {
+    add() {
+
+    },
     handleEdit() {
       console.log('编辑')
     },
